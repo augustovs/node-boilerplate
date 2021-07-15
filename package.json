@@ -1,0 +1,48 @@
+{
+  "name": "node-boilerplate",
+  "version": "v1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:augustovs/node-simple-boilerplate.git",
+  "author": "Augusto Ferreira <augusto.ferreira@amigoapp.com.br>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.18.3 <=14.17.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node build/index.js",
+    "start:dev": "yarn requirements-check && NODE_ENV=development nodemon --delay 500ms --inspect --exec babel-node index.js",
+    "requirements-check": "node check_node_version.js",
+    "lint": "eslint --ext .js ./src",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "bwip-js": "^3.0.0",
+    "chalk": "4.1.0",
+    "cors": "2.8.5",
+    "currency.js": "^2.0.3",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "helmet": "4.1.1",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "pg": "8.4.0",
+    "pg-hstore": "2.3.3",
+    "sequelize": "6.3.5",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/node": "7.10.5",
+    "@babel/preset-env": "7.11.5",
+    "@babel/register": "7.11.5",
+    "copy": "0.3.2",
+    "eslint": "7.10.0",
+    "semver": "7.3.5"
+  },
+  "resolutions": {
+    "graceful-fs": "4.x.x"
+  }
+}
