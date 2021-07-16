@@ -1,15 +1,15 @@
 import { Router } from 'express';
 
-// import InventoryWarehouseRoutes from './routes/inventory-warehouse';
+import ProductRoutes from './routes/product';
 
 class Routes {
 	constructor() {
 		this.routes = new Router();
-		// this.inventoryWarehouseRoutes = new InventoryWarehouseRoutes();
+		this.productRoutes = new ProductRoutes();
 	}
 
 	setup() {
-		// this.routes.use('/inventory-warehouses', [AuthMiddleware.isAuthorized], this.inventoryWarehouseRoutes.setup());
+		this.routes.use('/product', this.productRoutes.setup());
 
 		return this.routes;
 	}

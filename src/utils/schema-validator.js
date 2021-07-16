@@ -28,9 +28,6 @@ export default class SchemaValidator {
 			req.data = pickBy(results.data, value => !isUndefined(value));
 			req.filter = pickBy(results.filter, value => !isUndefined(value));
 
-			req.filter.company_id = req.auth.company_id;
-			req.filter.logged_user_id = req.auth.user_id;
-
 			return next();
 		};
 	}
